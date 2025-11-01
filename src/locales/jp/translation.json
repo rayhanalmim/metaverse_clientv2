@@ -1,0 +1,43 @@
+{
+  "demo": "デモ",
+  "login": {
+    "metaverse": "METAVERSE",
+    "sign_in_to_play": "SIGN IN TO PLAY",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "register": "Register",
+    "or": "Or",
+    "forgot_password": "Forget your password?",
+    "agree": "I agree to the",
+    "term": "Terms of service",
+    "confirm_password": "Re-enter Password",
+    "enter_email": "Enter Your Email",
+    "continue": "Continue"
+  },
+  "forgot_password": {
+    "title": "FORGOT PASSWORD",
+    "description": "Please enter the email used to create your Sengoku account, and we’ll send you a verify code to reset your password."
+  },
+  "verify_password": {
+    "title": "RESET PASSWORD",
+    "description": "Please check your inbox for verification code sent to ",
+    "enter_code": "Enter code",
+    "enter_code_here": "Enter code here",
+    "check_spam": "Can't find it? Please check your spam folder.",
+    "reset": "Reset"
+  },
+  "avatar": {
+    "choose_avatar": "CHOOSE YOUR CHARACTER",
+    "link_your_wallet": "Link to your Wallet?",
+    "play": "Play"
+  },
+  "validate": {
+    "not_space": "This field cannot contain spaces",
+    "password_not_match": "Password does not match. Please re-enter password.",
+    "required": "{{name}} is a required field",
+    "min": "{{name}} must be at least {{min}} characters",
+    "max": "{{name}} must be at most {{max}} characters"
+  }
+}

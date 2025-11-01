@@ -1,0 +1,143 @@
+.nft-debug-modal-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.nft-debug-modal {
+  position: absolute;
+  top: 320px;
+  right: 20px;
+  border: none;
+  padding-block: 0;
+  outline: none;
+  z-index: 9000;
+}
+
+.nft-debug-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nft-debug-button {
+  display: flex;
+  align-items: center;
+  background-color: #353535;
+  border: 1px solid #ffc000;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.nft-debug-button:hover {
+  background-color: #454545;
+  border-color: #ffdd00;
+}
+
+.nft-button-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nft-mint-button {
+  margin-top: 5px;
+}
+
+.nft-debug-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.nft-debug-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Network selector styles */
+.nft-network-selector, 
+.nft-contract-selector, 
+.nft-tokenid-selector {
+  background-color: #353535;
+  border: 1px solid #ffc000;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.nft-network-label, 
+.nft-contract-label,
+.nft-tokenid-label {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #ffc000;
+}
+
+.nft-network-buttons, 
+.nft-contract-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.nft-network-button, 
+.nft-contract-button {
+  background-color: #454545;
+  border: 1px solid #666;
+  border-radius: 4px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nft-network-button:hover, 
+.nft-contract-button:hover {
+  border-color: #ffc000;
+}
+
+.nft-network-button.active, 
+.nft-contract-button.active {
+  background-color: #ffc000;
+  color: #333;
+  border-color: #ffc000;
+}
+
+.nft-tokenid-input {
+  width: 100%;
+  background-color: #454545;
+  border: 1px solid #666;
+  border-radius: 4px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.nft-tokenid-input:focus {
+  border-color: #ffc000;
+  outline: none;
+}
+
+.nft-display-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nft-display-container-modal {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  max-width: 90%;
+  max-height: 90%;
+  z-index: 9600;
+} 

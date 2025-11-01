@@ -1,0 +1,58 @@
+.land-modal-title {
+    color: white;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ffc000;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.land-component {
+    gap: 20px;
+    width: 720px;
+    max-width: 90vw;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
+    position: relative;
+}
+
+.land-component.no-scroll {
+    overflow: hidden;
+}
+
+.land-component .no-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: white;
+}
+
+/* width */
+.land-component::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.land-component::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+.land-component::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}

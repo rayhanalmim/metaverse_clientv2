@@ -1,0 +1,327 @@
+.rakuichi-nft-display {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 85vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #f3ba2f;
+}
+
+.rakuichi-nft-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rakuichi-nft-header h2 {
+  margin: 0;
+  color: #f3ba2f; /* Gold color - matches Binance style */
+  font-size: 24px;
+}
+
+.rakuichi-close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rakuichi-close-button:hover {
+  color: #f3ba2f;
+}
+
+.rakuichi-nft-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Connect section */
+.rakuichi-connect-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.rakuichi-connect-button {
+  background-color: #f3ba2f;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.rakuichi-connect-button:hover {
+  background-color: #ffd056;
+}
+
+.rakuichi-connect-button:disabled {
+  background-color: #7a7a7a;
+  cursor: not-allowed;
+}
+
+/* Connected section */
+.rakuichi-connected-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rakuichi-wallet-info {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rakuichi-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.rakuichi-network-button {
+  background-color: #3861fb; /* Blue color for network buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.rakuichi-network-button:hover {
+  background-color: #2a4cc8;
+}
+
+.rakuichi-disconnect-button {
+  background-color: transparent;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.rakuichi-disconnect-button:hover {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* Loading and no NFTs */
+.rakuichi-loading, .rakuichi-no-nfts {
+  text-align: center;
+  padding: 40px 0;
+  color: #ccc;
+}
+
+/* NFT Management */
+.rakuichi-nft-management {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rakuichi-displayed-nfts, .rakuichi-nft-selector {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.rakuichi-displayed-nfts h3, .rakuichi-nft-selector h3 {
+  margin-top: 0;
+  color: #f3ba2f;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.rakuichi-select-button {
+  background-color: #f3ba2f;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.rakuichi-select-button:hover {
+  background-color: #ffd056;
+}
+
+/* NFT Grid */
+.rakuichi-nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.rakuichi-nft-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.rakuichi-nft-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.rakuichi-nft-card.rakuichi-selected {
+  border-color: #f3ba2f;
+}
+
+.rakuichi-nft-card h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rakuichi-nft-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.rakuichi-nft-type {
+  font-size: 12px;
+  color: #ccc;
+  margin: 5px 0;
+  padding: 3px 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.rakuichi-nft-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rakuichi-remove-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.rakuichi-remove-button:hover {
+  background-color: #e45959;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rakuichi-nft-display {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .rakuichi-nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  
+  .rakuichi-nft-card h4 {
+    font-size: 14px;
+  }
+  
+  .rakuichi-nft-image {
+    height: 120px;
+  }
+} 
+
+.rakuichi-header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rakuichi-debug-button {
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.rakuichi-debug-button:hover {
+  background-color: #666;
+}
+
+.rakuichi-debug-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.rakuichi-debug-info h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #f3ba2f;
+}
+
+.debug-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.debug-details strong {
+  color: #f3ba2f;
+  margin-right: 5px;
+} 

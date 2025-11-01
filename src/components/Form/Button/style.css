@@ -1,0 +1,84 @@
+.form-button-sm {
+    width: 100%;
+    height: 30px;
+}
+
+.form-button-md {
+    width: 100%;
+    height: 40px;
+}
+
+.form-button-lg {
+    width: 100%;
+    height: 60px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button.rounded-sm {
+    border-radius: 4px;
+}
+
+button.rounded-md {
+    border-radius: 8px;
+}
+
+button.rounded-lg {
+    border-radius: 12px;
+}
+
+button:disabled {
+    background: #ebebe4;
+}
+
+button.loading-btn {
+    position: relative;
+}
+
+@keyframes button-anim {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button.loading-btn {
+    color: transparent !important;
+    pointer-events: none;
+}
+
+button.loading-btn::after {
+    content: '';
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    position: absolute;
+    left: calc(50% - 0.75em);
+    top: calc(50% - 0.75em);
+    border: 0.15em solid transparent;
+    border-right-color: white;
+    border-radius: 50%;
+    animation: button-anim 0.7s linear infinite;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .form-button-sm {
+        width: 100%;
+        height: 30px;
+    }
+
+    .form-button-md {
+        width: 100%;
+        height: 35px;
+    }
+
+    .form-button-lg {
+        width: 100%;
+        height: 40px;
+    }
+}

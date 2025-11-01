@@ -1,0 +1,1010 @@
+[
+    {
+        "tokenId": 1,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 2,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 3,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 4,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 5,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 6,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 7,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 8,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 9,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 10,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 11,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 12,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 13,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 14,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 15,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 16,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 17,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 18,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 19,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 20,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 21,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 22,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 23,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 24,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 25,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 26,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 27,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 28,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 29,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 30,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 31,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 32,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 33,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 34,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    },
+    {
+        "tokenId": 35,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 36,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 37,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 38,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 39,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 40,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 41,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 42,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 43,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 44,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard2"
+            }
+        ]
+    },
+    {
+        "tokenId": 45,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows3"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 46,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp2"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows1"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard4"
+            }
+        ]
+    },
+    {
+        "tokenId": 47,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door2"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard1"
+            }
+        ]
+    },
+    {
+        "tokenId": 48,
+        "attributes": [
+            {
+                "trait_type": "Attribute_Door",
+                "value": "Door1"
+            },
+            {
+                "trait_type": "Attribute_Lamp",
+                "value": "Lamp1"
+            },
+            {
+                "trait_type": "Attribute_Windows",
+                "value": "Windows2"
+            },
+            {
+                "trait_type": "Attribute_Yard",
+                "value": "Yard3"
+            }
+        ]
+    }
+]

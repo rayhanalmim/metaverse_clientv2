@@ -1,0 +1,285 @@
+/* Rented Buildings Modal Styles */
+.rented-buildings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rented-buildings-modal {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  z-index: 1001;
+}
+
+.rented-buildings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #353535;
+  border: 1px solid #ffc000;
+  border-radius: 10px 10px 0 0;
+}
+
+.rented-buildings-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #ffc000;
+}
+
+.rented-buildings-close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.rented-buildings-close-button:hover {
+  color: #ffc000;
+}
+
+.rented-buildings-content {
+  padding: 20px;
+  overflow-y: auto;
+  background-color: rgba(53, 53, 53, 0.95);
+  border: 1px solid #ffc000;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  max-height: 70vh;
+  color: white;
+}
+
+.rented-buildings-connect {
+  text-align: center;
+  padding: 40px 20px;
+  color: #cccccc;
+}
+
+.rented-buildings-wallet-info {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.rented-buildings-wallet-info p {
+  margin: 5px 0;
+}
+
+.rented-buildings-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  text-align: center;
+  color: #cccccc;
+}
+
+.rented-buildings-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid #ffc000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rented-buildings-empty {
+  text-align: center;
+  padding: 50px 0;
+  color: #cccccc;
+}
+
+.rented-buildings-empty p {
+  margin: 10px 0;
+}
+
+.rented-buildings-refresh-button {
+  background-color: #ffc000;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+}
+
+.rented-buildings-refresh-button:hover {
+  background-color: #ffcc33;
+}
+
+.rented-buildings-listings {
+  width: 100%;
+}
+
+.rented-buildings-summary {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 192, 0, 0.3);
+}
+
+.rented-buildings-summary h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #ffc000;
+}
+
+.rented-buildings-summary p {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.rented-buildings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.rented-buildings-item {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rented-buildings-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rented-buildings-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rented-buildings-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rented-buildings-no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #999;
+}
+
+.rented-buildings-info {
+  padding: 15px;
+  flex: 1;
+}
+
+.rented-buildings-info h4 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.rented-buildings-status {
+  margin-bottom: 15px;
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.rented-buildings-details p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.rented-buildings-details strong {
+  color: #ffc000;
+}
+
+.rented-buildings-warning {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(255, 152, 0, 0.2);
+  border: 1px solid #ff9800;
+  border-radius: 5px;
+  color: #ffcc80;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rented-buildings-modal {
+    width: 95vw;
+    max-width: none;
+  }
+
+  .rented-buildings-header {
+    padding: 15px 20px;
+  }
+
+  .rented-buildings-header h2 {
+    font-size: 20px;
+  }
+
+  .rented-buildings-content {
+    padding: 20px;
+  }
+
+  .rented-buildings-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rented-buildings-modal {
+    width: 98vw;
+  }
+
+  .rented-buildings-content {
+    padding: 15px;
+  }
+
+  .rented-buildings-header {
+    padding: 15px;
+  }
+
+  .rented-buildings-header h2 {
+    font-size: 18px;
+  }
+}

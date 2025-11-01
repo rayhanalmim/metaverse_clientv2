@@ -1,0 +1,8 @@
+.confirm-logout {
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 20px;
+}

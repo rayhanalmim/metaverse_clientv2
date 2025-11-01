@@ -1,0 +1,233 @@
+.page-auth {
+    width: 100%;
+    height: 100%;
+    background: url('src/assets/images/background-login.png') no-repeat fixed center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.page-auth:has(.register-container) {
+    background: url('src/assets/images/background-blur.png') no-repeat fixed center;
+    background-size: cover;
+}
+
+.page-logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    height: 30px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.page-logo img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.page-logo .text {
+    color: white;
+    font-size: 16px;
+    letter-spacing: 4px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    font-weight: 400 !important;
+}
+
+.form-auth {
+    max-width: 430px;
+    width: 100%;
+}
+
+.form-auth form {
+    width: 100%;
+}
+
+.login-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login-logo .text {
+    font-size: 48px;
+    letter-spacing: 30px;
+    line-height: 58px;
+    color: white;
+}
+
+.form-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-auth .form-input {
+    margin-bottom: 30px;
+}
+
+.form-register .form-input:has([name='confirmPassword']),
+.form-login .form-input:has([name='password']) {
+    margin-bottom: 0;
+}
+
+.form-auth .form-input input {
+    font-size: 18px;
+    border: none;
+}
+
+.form-btn button {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.form-auth .login-btn {
+    border: none;
+    color: white;
+}
+
+.form-auth .login-btn:enabled {
+    background: #ffc000;
+    transition: 0.5s all ease;
+    cursor: pointer;
+}
+
+.form-auth .login-btn:enabled:hover {
+    background: white;
+    color: #ffc000;
+    border: 2px solid #ffc000;
+}
+
+.form-auth .register-btn {
+    background: none;
+    color: #ffc000;
+    border-color: #ffc000;
+    transition: 0.5s all ease;
+    cursor: pointer;
+}
+
+.form-auth .register-btn:hover {
+    background: #ffc000;
+    color: white;
+}
+
+.form-auth .text {
+    font-size: 24px;
+    letter-spacing: 9px;
+    font-weight: 900;
+    color: #ffc000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-auth .text-register {
+    text-transform: uppercase;
+}
+
+.form-auth .or {
+    font-size: 18px;
+    padding: 8px 0;
+    color: white;
+}
+
+.form-auth .forgot-password {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    color: #ffc000;
+    text-decoration: underline;
+    padding: 12px 0;
+}
+
+.forgot-password span {
+    cursor: pointer;
+}
+
+.form-auth .term-checkbox {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 12px 0;
+}
+
+.term-checkbox .form-checkbox {
+    margin-right: 5px;
+}
+
+.term-checkbox .term-or-service {
+    color: #ffc000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.forgot-password-description {
+    color: white;
+    text-align: center;
+    width: 108%;
+    margin-left: -4%;
+    margin-bottom: 30px;
+}
+
+.forgot-password-description .email {
+    color: #ffc000;
+    font-weight: 700;
+}
+
+.verify-btn {
+    margin-top: 30px;
+}
+
+.enter-code {
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.check-spam {
+    color: white;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+    .page-auth {
+        padding-inline: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .login-logo {
+        width: 100%;
+    }
+
+    .login-logo img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .login-logo .text {
+        font-size: 18px;
+        letter-spacing: 10px;
+        line-height: 30px;
+    }
+
+    .form-auth .text {
+        font-size: 20px;
+    }
+
+    .forgot-password-description {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .continue-btn {
+        height: 60px;
+    }
+}

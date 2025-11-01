@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Body 1",
+    "link": "models/avatars/avatar1.glb",
+    "sex": 1
+  },
+  {
+    "id": 2,
+    "name": "Body 2",
+    "link": "models/avatars/avatar2.glb",
+    "sex": 1
+  },
+  {
+    "id": 3,
+    "name": "Body 3",
+    "link": "models/avatars/avatar3.glb",
+    "sex": 1
+  },
+  {
+    "id": 4,
+    "name": "Body 4",
+    "link": "models/avatars/avatar4.glb",
+    "sex": 1
+  },
+  {
+    "id": 5,
+    "name": "Body 5",
+    "link": "models/avatars/avatar5.glb",
+    "sex": 1
+  },
+  {
+    "id": 6,
+    "name": "Body 6",
+    "link": "models/avatars/avatar6.glb",
+    "sex": 2
+  },
+  {
+    "id": 7,
+    "name": "Body 7",
+    "link": "models/avatars/avatar7.glb",
+    "sex": 2
+  },
+  {
+    "id": 8,
+    "name": "Body 8",
+    "link": "models/avatars/avatar8.glb",
+    "sex": 2
+  },
+  {
+    "id": 9,
+    "name": "Body 9",
+    "link": "models/avatars/avatar9.glb",
+    "sex": 2
+  },
+  {
+    "id": 10,
+    "name": "Body 10",
+    "link": "models/avatars/avatar10.glb",
+    "sex": 2
+  }
+]

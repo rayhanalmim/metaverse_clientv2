@@ -1,0 +1,345 @@
+.store-modal.mat-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding-block: 0;
+    outline: none;
+    width: 90%;
+    max-width: 1255px;
+    height: calc(100% - 100px);
+    overflow: hidden;
+    background: url('src/assets/images/mat-pat.jpg') no-repeat fixed center;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+.mat-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: unset !important;
+    z-index: 9999999 !important;
+    animation: zoom-in 0.3s ease-in-out;
+}
+
+.store-overlay:before {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100vw;
+    height: 180px;
+    max-height: 30vh;
+    background: url('src/assets/images/table.png') center no-repeat;
+    background-size: cover;
+}
+
+.store-overlay:after {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: auto;
+    width: 100vw;
+    height: calc(100vh - 180px);
+    min-height: 70vh;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+.mat-modal .store-modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: calc(100% - 60px);
+    height: calc(100% - 40px);
+    padding-left: 30px;
+    padding-bottom: 40px;
+}
+
+.store-modal-container .tab {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    margin-top: 30px;
+    margin-inline: 30px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid white;
+}
+
+.store-modal-container .tab-item {
+    text-transform: uppercase;
+    padding-inline: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    border-right: 1px solid white;
+    cursor: pointer;
+}
+
+.store-modal-container .tab-active {
+    background: black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px 20px 10px 10px;
+}
+
+.store-modal-container .tab-item:nth-last-child(1) {
+    border-right: 0;
+}
+
+.mat-modal .list-store,
+.mat-modal .store-detail {
+    height: calc(100% - 140px);
+    overflow-y: auto;
+    padding-inline: 24px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* width */
+.mat-modal .list-store::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.mat-modal .list-store::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+.mat-modal .list-store::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+
+.mat-modal .list-store .nft-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #353535;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.list-store .nft-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.list-store .nft-tag {
+    position: relative;
+    background: url('src/assets/images/tag-name.png') no-repeat fixed center;
+    width: calc(100% - 30px);
+    left: 15px;
+    top: -30px;
+    height: 60px;
+    color: white;
+}
+
+.nft-tag .nft-name {
+    padding-left: 12px;
+    padding-top: 4px;
+}
+
+.nft-tag .nft-sell {
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    font-weight: 700;
+}
+
+.nft-tag .nft-sell .unit {
+    font-weight: 400;
+    padding-left: 4px;
+}
+
+.store-detail {
+    gap: 20px;
+}
+
+.store-detail .left-side {
+    width: 62%;
+    height: calc(100% - 20px);
+    background: #353535;
+    border-radius: 10px;
+}
+
+.store-detail .left-side .left-side-image {
+    width: 100%;
+    height: 100%;
+}
+
+.left-side-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.store-detail .right-side {
+    background: white;
+    width: calc(38% - 52px);
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.store-detail .right-side .buy-now {
+    background: #ffc000;
+    border-radius: 12px;
+    font-size: 24px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nft-info {
+    font-size: 14px;
+}
+
+.nft-info .info-title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nft-info .info-owner {
+    padding-top: 4px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid black;
+    color: #ffc000;
+    word-break: break-all;
+    display: flex;
+}
+
+.nft-info .label {
+    color: black;
+}
+
+.info-owner .label {
+    color: #bfbfbf;
+    width: max-content;
+    min-width: max-content;
+    padding-right: 4px;
+}
+
+.nft-info .info-address,
+.nft-info .info-token {
+    padding: 6px 0;
+    color: #ffc000;
+    display: flex;
+    word-break: break-all;
+}
+
+.info-address .label,
+.info-token .label {
+    width: 120px;
+    min-width: 120px;
+}
+
+.nft-info .info-token {
+    border-bottom: 1px solid black;
+    margin-bottom: 16px;
+}
+
+.nft-info .info-detail {
+    color: #353535;
+    margin-bottom: 16px;
+}
+
+.nft-info .info-price {
+    color: #ffc000;
+    font-size: 38px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.info-price span {
+    font-size: 24px;
+    font-weight: 400;
+    color: #353535;
+    padding-left: 4px;
+}
+
+.nft-info .info-sub-price {
+    color: #353535;
+}
+
+.list-store {
+    position: relative;
+}
+
+.list-store .no-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: white;
+}
+
+.mat-modal .list-store {
+    height: 100%;
+    padding-block: 30px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 240px));
+}
+
+.nft-plus-item {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    padding: 18px 20px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 1px solid #FFC000;
+    background: rgba(0, 0, 0, 0.30);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1440px) {
+    .store-modal {
+        width: 80%;
+    }
+
+    .mat-modal .list-store .nft-image {
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .store-modal {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .store-modal {
+        width: calc(100% - 40px);
+    }
+}

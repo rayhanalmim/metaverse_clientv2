@@ -1,0 +1,49 @@
+.ReactModalPortal .choose-land-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: #353535;
+    border: none;
+    padding: 20px 40px;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.choose-land-modal .choose-land-btn {
+    display: flex;
+    gap: 20px;
+}
+
+.choose-land-modal .choose-land-btn button {
+    width: 120px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    height: 41px;
+    cursor: pointer;
+}
+
+.choose-land-modal .choose-land-btn button:nth-child(1) {
+    border: none;
+    background: #ffc000;
+    color: white;
+}
+
+.choose-land-modal .choose-land-btn button:nth-child(2) {
+    border: 1px solid #ffc000;
+    background: none;
+    color: #ffc000;
+}
+
+.choose-land-modal .land-select {
+    padding-block: 20px;
+}
+
+.select-lands #react-select-3-listbox {
+    color: black;
+}

@@ -1,0 +1,8 @@
+.switch-network-success .confirm-btn button {
+    background: #ffc000 !important;
+    color: white !important;
+}
+
+.switch-network-success .sub-content {
+    font-size: 14px;
+}

@@ -1,0 +1,77 @@
+variables:
+  SONAR_OPTS: '-Dsonar.qualitygate.wait=true -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info'
+  SONAR_USER_HOME: '${CI_PROJECT_DIR}/.sonar' # Defines the location of the analysis task cache
+  GIT_DEPTH: '0' # Tells git to fetch all the branches of the project, required by the analysis task
+  FRONTEND_NAME: "${FRONTEND_NAME}"
+  NGINX_NAME: "${NGINX_NAME}"
+  VOLUME_NAME: "${VOLUME_NAME}"
+  NETWORK_NAME: "${NETWORK_NAME}"
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "develop"
+      variables:
+        ENV: develop
+    - if: $CI_COMMIT_BRANCH == "staging"
+      variables:
+        ENV: staging
+
+stages:
+  - scan-code
+  - deploy
+
+sonarqube-check:
+  tags:
+    - $ENV
+  stage: scan-code
+  image:
+    name: sonarsource/sonar-scanner-cli:latest
+    entrypoint: [ '' ]
+  cache:
+    key: '${CI_JOB_NAME}'
+    paths:
+      - .sonar/cache
+  script:
+    - sonar-scanner $SONAR_OPTS
+  allow_failure: false
+  only:
+    - develop
+
+docker-build:
+  tags:
+    - $ENV
+  stage: deploy
+  environment: $ENV
+  before_script:
+    - echo "REACT_APP_API_END_POINT=$REACT_APP_API_END_POINT" >> .env
+    - echo "REACT_APP_API_LOGIN=$REACT_APP_API_LOGIN" >> .env
+    - echo "REACT_APP_SOCKET_URL=$REACT_APP_SOCKET_URL" >> .env
+    - echo "REACT_APP_NFT_LANDS_CONTRACT_ADDRESS=$REACT_APP_NFT_LANDS_CONTRACT_ADDRESS" >> .env
+    - echo "REACT_APP_NFT_HOME_CONTRACT_ADDRESS=$REACT_APP_NFT_HOME_CONTRACT_ADDRESS" >> .env
+    - echo "REACT_APP_NFT_CONTRACT_MARKET=$REACT_APP_NFT_CONTRACT_MARKET" >> .env
+    - echo "REACT_APP_NFT_OVE=$REACT_APP_NFT_OVE" >> .env
+    - echo "REACT_APP_NFT_CLANDS=$REACT_APP_NFT_CLANDS" >> .env
+    - echo "REACT_APP_NFT_CHOMES=$REACT_APP_NFT_CHOMES" >> .env
+    - echo "REACT_APP_API_END_POINT_NOPORT=$REACT_APP_API_END_POINT_NOPORT" >> .env
+    - echo "REACT_APP_EC_SITE_URL=$REACT_APP_EC_SITE_URL" >> .env
+    - echo "REACT_APP_TX_HASH_URL=$REACT_APP_TX_HASH_URL" >> .env
+    - echo "REACT_APP_MARKET_PLACE_URL=$REACT_APP_MARKET_PLACE_URL" >> .env
+    - echo "REACT_APP_OWNER_ADDRESS=$REACT_APP_OWNER_ADDRESS" >> .env
+    - echo "REACT_APP_DEEP_LINK=$REACT_APP_DEEP_LINK" >> .env
+    - echo "REACT_APP_NODE_ENV=$REACT_APP_NODE_ENV" >> .env
+    - echo "REACT_APP_NFT_MUMBAI=$REACT_APP_NFT_MUMBAI" >> .env
+    - echo "REACT_APP_MUMBAI_CHAIN_ID=$REACT_APP_MUMBAI_CHAIN_ID" >> .env
+    - echo "REACT_APP_BNB_CHAIN_ID=$REACT_APP_BNB_CHAIN_ID" >> .env
+    - echo "REACT_APP_ETH_LANDS_CONTRACT_ADDRESS=$REACT_APP_ETH_LANDS_CONTRACT_ADDRESS" >> .env
+    - echo "REACT_APP_ETH_HOME_CONTRACT_ADDRESS=$REACT_APP_ETH_HOME_CONTRACT_ADDRESS" >> .env
+    - echo "REACT_APP_NFT_ETH_CONTRACT_MARKET=$REACT_APP_NFT_ETH_CONTRACT_MARKET" >> .env
+    - echo "REACT_APP_NFT_ETH_OVE=$REACT_APP_NFT_ETH_OVE" >> .env
+  script:
+    - docker build -t "${FRONTEND_NAME}:latest" -f Dockerfile.frontend .
+    - docker build -t "${NGINX_NAME}:latest" -f Dockerfile.nginx .
+    - docker stop ${FRONTEND_NAME} || true
+    - docker stop ${NGINX_NAME} || true
+    - docker rm $(docker ps --filter status=exited -q) || true
+    - docker volume rm ${VOLUME_NAME} || true
+    - docker run --restart=always --name ${FRONTEND_NAME} --env-file .env --network ${NETWORK_NAME} --volume ${VOLUME_NAME}:/app/build -d ${FRONTEND_NAME}:latest
+    - docker run --restart=always --name ${NGINX_NAME} --env-file .env --network ${NETWORK_NAME} -p 80:80 --volume ${VOLUME_NAME}:/usr/share/nginx/html -d ${NGINX_NAME}:latest

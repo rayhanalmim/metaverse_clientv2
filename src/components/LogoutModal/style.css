@@ -1,0 +1,119 @@
+.logout-modal-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.logout-modal {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    border: none;
+    padding-block: 0;
+    outline: none;
+}
+
+.logout-modal .menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #353535;
+    border: 1px solid #ffc000;
+    border-radius: 10px;
+    color: white;
+    gap: 8px;
+    position: absolute;
+    min-width: 200px;
+    right: 0;
+}
+
+.logout-modal button {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+.logout-modal .logout-btn button {
+    background: #ffc000;
+    border: none;
+    color: white;
+}
+
+.logout-modal .activity-btn button {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.logout-modal .activity-btn button:hover,
+.logout-modal .activity-btn.is-focus button {
+    background: #ffc000;
+    border: none;
+    color: white;
+}
+
+.logout-modal .activity-btn button:hover path,
+.logout-modal .activity-btn.is-focus button path {
+    fill: white;
+    stroke: white;
+}
+
+.logout-modal .icon-menu {
+    cursor: pointer;
+}
+
+.logout-modal .icon-menu:hover path,
+.logout-modal .icon-menu:focus path,
+.logout-modal .icon-menu.is-focus path {
+    fill: #ffc000;
+    fill-opacity: 1;
+}
+
+.logout-modal .icon-menu:hover rect,
+.logout-modal .icon-menu:focus rect,
+.logout-modal .icon-menu.is-focus rect {
+    stroke: #ffc000;
+    stroke-opacity: 1;
+}
+
+.far-detail-input {
+    display: flex;
+    align-items: center;
+}
+
+.far-detail-input button {
+    padding: 0;
+    justify-content: center;
+}
+
+.far-detail-input span {
+    padding-inline: 16px;
+}
+
+.far-detail-btn {
+    padding-right: 20px;
+}
+
+.far-detail-btn button {
+    padding: 0;
+    justify-content: center;
+}
+
+.far-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.control-mode {
+    display: flex;
+    gap: 10px;
+}
+
+.control-mode button {
+    padding: 5px;
+    text-transform: uppercase;
+}

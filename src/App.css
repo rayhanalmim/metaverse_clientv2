@@ -1,0 +1,174 @@
+body {
+    overflow: hidden;
+}
+
+.App {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#webgl_container {
+    display: flex;
+}
+
+/* -----------Popup------------ */
+.popupRoot {
+    position: absolute;
+    z-index: 11;
+}
+
+.popup {
+    background-color: #00000054;
+    position: absolute;
+    width: 530px;
+    height: 330px;
+    z-index: 10;
+    border: 1px solid #d3d3d3;
+}
+
+.popupcontent {
+    display: flex;
+}
+
+.popupheader {
+    padding: 5px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196f3;
+    color: #fff;
+}
+
+.closebutton {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.btn-group button {
+    background-color: #04aa6d; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100px; /* Set a width if needed */
+    height: 100px;
+    margin: 2px;
+    display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group img {
+    width: 90px;
+    height: 90px;
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+.ReactModalPortal .custom-confirm-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: #353535;
+    border: none;
+    padding-block: 0;
+    outline: none;
+    width: 400px;
+    max-width: calc(100% - 30px);
+    border-radius: 10px;
+    padding: 40px 0;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 192, 0, 0.6);
+}
+
+.custom-confirm-modal .confirm-btn {
+    display: flex;
+    gap: 20px;
+}
+
+.custom-confirm-modal .confirm-btn button {
+    width: 122px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.custom-confirm-modal .confirm-btn button:nth-child(1):enabled {
+    background: #ffc000;
+    color: white;
+    border: none;
+}
+
+.custom-confirm-modal .confirm-btn button:nth-last-child(1) {
+    background: none;
+    color: #ffc000;
+    border: #ffc000 1px solid;
+}
+
+.confirm-new-sign-in .confirm-btn button:nth-last-child(1) {
+    background: #ffc000;
+    color: white;
+    border: none;
+}
+
+.btn-jump {
+    position: absolute;
+    bottom: 35%;
+    right: 5%;
+    z-index: 1000;
+    height: 50px;
+    width: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.btn-jump img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

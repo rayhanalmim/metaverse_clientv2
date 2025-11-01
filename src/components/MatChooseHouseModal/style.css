@@ -1,0 +1,138 @@
+.mat-house-title {
+    color: #ffc000;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ffc000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.mat-house-title .sort {
+    color: #FFC000;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    user-select: none;
+}
+
+.mat-house-title .sort-menu {
+    display: flex;
+    width: 134px;
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #FFC000;
+    background: #353535;
+    position: absolute;
+    top: 30px;
+    z-index: 2;
+}
+
+.mat-house-title .sort-menu > span {
+    display: flex;
+    padding: 8px 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.mat-house-title .sort-menu > span:hover, .mat-house-title .sort-menu > span.active {
+    border-radius: 4px;
+    background: #FFC000;
+}
+
+.land-component {
+    gap: 20px;
+    width: 720px;
+    max-width: 90vw;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
+    position: relative;
+}
+
+.land-component.no-scroll {
+    overflow: hidden;
+}
+
+.land-component .no-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: white;
+}
+
+/* width */
+.land-component::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.land-component::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+.land-component::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.mat-house-item input {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mat-house-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.mat-house-footer button {
+    width: 142px;
+    height: 41px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mat-house-footer button:nth-child(1) {
+    background: #ffc000;
+    color: white;
+}
+
+.mat-house-footer button:nth-child(2) {
+    border: 1px solid #ffc000;
+    background: white;
+    color: #ffc000;
+}

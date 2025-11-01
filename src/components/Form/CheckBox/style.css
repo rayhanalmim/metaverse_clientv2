@@ -1,0 +1,30 @@
+.form-checkbox input[type='checkbox'] {
+  cursor: pointer;
+  appearance: none;
+  height: 32px;
+  width: 32px;
+  min-width: 32px;
+  background: #ffffff;
+  transition: all 250ms linear;
+  box-shadow: inset 0 0 0 4px #ffffff;
+  border: 1px solid #bfbfbf;
+}
+
+.form-checkbox input[type='checkbox'] {
+  border-radius: 0;
+}
+.form-checkbox.rounded-sm input[type='checkbox'] {
+  border-radius: 4px;
+}
+.form-checkbox.rounded-md input[type='checkbox'] {
+  border-radius: 8px;
+}
+.form-checkbox.rounded-lg input[type='checkbox'] {
+  border-radius: 12px;
+}
+
+.form-checkbox input[type='checkbox']:checked {
+  border-color: #ffc000;
+  background-color: #ffc000;
+  box-shadow: inset 0 0 0 5px #ffffff;
+}

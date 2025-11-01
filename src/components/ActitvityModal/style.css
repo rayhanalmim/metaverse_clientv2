@@ -1,0 +1,175 @@
+.ReactModalPortal .activity-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    padding-block: 0;
+    outline: none;
+    width: 1200px;
+    max-width: calc(100% - 30px);
+}
+
+.activity-modal .title {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px 20px 0 0;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.activity-modal .activity-content {
+    background: #000000;
+    border: 1px solid #ffc000;
+    border-radius: 0 0 20px 20px;
+    color: white;
+    height: 600px;
+    overflow-y: auto;
+}
+
+.activity-content::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+.activity-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+.activity-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.activity-content::-webkit-scrollbar-button:increment {
+    display: block;
+}
+
+.activity-content table {
+    width: 100%;
+    border: none;
+}
+
+.activity-content thead th {
+    padding-block: 20px;
+    padding-right: 10px;
+    border-bottom: 1px solid #ffc000;
+    text-align: left;
+    width: 14%;
+    white-space: nowrap;
+}
+
+.activity-content thead th:nth-child(1) {
+    padding-left: 30px;
+    /*width: 14%;*/
+}
+
+.activity-content thead th:nth-last-child(1) {
+    width: 16%;
+}
+
+.activity-content tbody td > div {
+    height: 44px;
+    background: #353535;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.activity-content tbody tr:nth-child(1) td > div {
+    margin-top: 10px;
+}
+
+.activity-content tbody td:nth-child(1) > div {
+    border-radius: 10px 0 0 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+
+.activity-content tbody td:nth-last-child(1) > div {
+    border-radius: 0 10px 10px 0;
+    margin-right: 10px;
+    width: calc(100% - 10px);
+}
+
+.activity-content .activity-amount {
+    color: #ffc000;
+}
+
+.activity-content .activity-hash {
+    color: #ffc000;
+    cursor: pointer;
+}
+
+.activity-content .activity-type {
+    text-transform: uppercase;
+}
+
+.activity-content .activity-type svg {
+    padding-right: 6px;
+}
+
+.activity-content .rc-table-header table {
+    border-spacing: 0;
+}
+
+.activity-content .rc-table-body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+.activity-content .rc-table-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+.activity-content .rc-table-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.activity-content.no-scroll {
+    overflow: hidden;
+    position: relative;
+}
+
+.activity-content.no-scroll .rc-table {
+    opacity: 0;
+}
+
+.activity-content.no-scroll .no-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .activity-modal .activity-content {
+        height: 450px;
+    }
+}

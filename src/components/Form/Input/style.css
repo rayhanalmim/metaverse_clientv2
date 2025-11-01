@@ -1,0 +1,67 @@
+input:focus {
+  outline: none;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+}
+
+.form-input input {
+  padding: 18px 20px;
+}
+
+.form-input input:focus {
+  border: 2px solid #ffc000 !important;
+}
+
+.form-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input .error {
+  color: #f65050;
+  font-size: 12px;
+  padding-top: 4px;
+}
+
+.form-input.rounded-sm,
+.form-input.rounded-sm input {
+  border-radius: 4px;
+}
+
+.form-input.rounded-md,
+.form-input.rounded-md input {
+  border-radius: 8px;
+}
+
+.form-input.rounded-lg,
+.form-input.rounded-lg input {
+  border-radius: 12px;
+}
+
+.input-password {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.input-password .icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input-password input {
+  width: inherit;
+}
