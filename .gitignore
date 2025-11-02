@@ -14,8 +14,6 @@
 # misc
 .DS_Store
 .idea/
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -25,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /public
+config.bat
