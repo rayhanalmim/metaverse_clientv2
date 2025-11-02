@@ -160,18 +160,29 @@ export default class MainScene extends OnlineScene {
     // Create CSS3D Renderer for HTML elements (YouTube iframes)
     this.css3dRenderer = new CSS3DRenderer();
     this.css3dRenderer.setSize(window.innerWidth, window.innerHeight);
-    this.css3dRenderer.domElement.style.position = 'absolute';
-    this.css3dRenderer.domElement.style.top = '0';
-    this.css3dRenderer.domElement.style.left = '0';
-    this.css3dRenderer.domElement.style.zIndex = '11'; // Above WebGL renderer
-    this.css3dRenderer.domElement.style.pointerEvents = 'none'; // Allow interactions to pass through by default
+    this.css3dRenderer.domElement.className = 'css3d-container'; // CSS handles z-index and pointer-events
     this.container?.appendChild(this.css3dRenderer.domElement);
 
-    // Create CSS3D Scene (separate from WebGL scene)
+    // Character renderer layer (renders player on top)
+    this.characterRenderer = new THREE.WebGLRenderer({
+      antialias: Settings3D.Ins.antialias,
+      alpha: true
+    });
+    this.characterRenderer.setPixelRatio(window.devicePixelRatio);
+    this.characterRenderer.setSize(window.innerWidth, window.innerHeight);
+    this.characterRenderer.setClearColor(0x000000, 0);
+    this.characterRenderer.toneMapping = this.renderer.toneMapping;
+    this.characterRenderer.toneMappingExposure = this.renderer.toneMappingExposure;
+    this.characterRenderer.domElement.className = 'character-layer'; // CSS handles z-index
+    this.container?.appendChild(this.characterRenderer.domElement);
+
+    // Create CSS3D Scene
     this.css3dScene = new THREE.Scene();
-    console.log('✅ CSS3D renderer initialized');
-    console.log('CSS3D renderer DOM element z-index:', this.css3dRenderer.domElement.style.zIndex);
-    console.log('CSS3D renderer size:', window.innerWidth, 'x', window.innerHeight);
+
+    // Create character scene
+    this.characterScene = new THREE.Scene();
+
+    console.log('✅ 3-Layer rendering (CSS-controlled)');
 
     // load environment texture
     Env.Ins.resourcesManager.LoadRGBETexture(ASSETS.ENVIRONMENT, (texture) => {
@@ -180,6 +191,7 @@ export default class MainScene extends OnlineScene {
       this.envMap = texture;
       this.scene.background = texture;
       this.scene.environment = texture;
+      this.characterScene.environment = texture; // Ensure player layer reuses scene lighting
       this.SetupScene();
     });
   }
@@ -202,6 +214,20 @@ export default class MainScene extends OnlineScene {
       console.log('nobu', gltf);
       gltf.scene.name = 'Nobunaga';
     });
+  }
+
+  protected SetupLights() {
+    const addLights = (targetScene: THREE.Scene | undefined) => {
+      if (!targetScene) return;
+      const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.5);
+      hemiLight.position.set(0, 20, 0);
+      targetScene.add(hemiLight);
+      const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
+      targetScene.add(ambientLight);
+    };
+
+    addLights(this.scene);
+    addLights(this.characterScene);
   }
 
   protected SetupScene() {
@@ -473,11 +499,35 @@ export default class MainScene extends OnlineScene {
     if (this.control.enabled) {
       this.control.update();
     }
+
+    // Hide player temporarily to render world without it
+    const playerVisible = this.currentUserAvatar?.GetAvatarRoot()?.visible;
+    if (this.currentUserAvatar?.GetAvatarRoot()) {
+      this.currentUserAvatar.GetAvatarRoot().visible = false;
+    }
+
+    // Render Layer 1: World (without player)
     super.Update(deltaTime);
 
-    // Render CSS3D scene (YouTube iframes and other HTML elements)
+    // Render Layer 2: CSS3D YouTube videos
     if (this.css3dRenderer && this.css3dScene) {
       this.css3dRenderer.render(this.css3dScene, this.camera);
+    }
+
+    // Render Layer 3: Player character on top layer
+    if (this.currentUserAvatar?.GetAvatarRoot() && playerVisible) {
+      this.currentUserAvatar.GetAvatarRoot().visible = true;
+
+      if (this.characterRenderer && this.characterScene) {
+        // Add the player to isolated scene while preserving shared lighting
+        this.characterScene.add(this.currentUserAvatar.GetAvatarRoot());
+
+        // Render only the player on top layer (z-index: 100)
+        this.characterRenderer.render(this.characterScene, this.camera);
+
+        // Move player back to main scene
+        this.scene.add(this.currentUserAvatar.GetAvatarRoot());
+      }
     }
   }
 }
