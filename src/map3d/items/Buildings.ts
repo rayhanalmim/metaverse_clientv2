@@ -16,6 +16,7 @@ import App3D from '../App3D';
 import nftDataService from 'src/services/nftDataService';
 // Import general repository for user data
 import generalRepository from 'src/api/general';
+import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 
 export default class NftBuildings {
   private static _instance?: NftBuildings;
@@ -1135,85 +1136,142 @@ export default class NftBuildings {
         return;
       }
 
-      // Special case for properties with BIG SKY VIDEO SCREEN (ALWAYS SHOW)
+      // Special case for property 387 - YouTube iframe screen
+      if (element.landID === 387) {
+        const YOUTUBE_VIDEO_ID = '_GuBtYkMkZ0';
+        const YOUTUBE_EMBED_URL = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`;
+
+        // Load medieval sign board as frame (same as property 384)
+        Environments.Ins.resourcesManager.LoadGLB(
+          'models/buildings/specific/old_medieval_sign_board.glb',
+          (gltf) => {
+            // Create a new instance mesh for the sign board
+            const signMesh = new IntanceMeshes(gltf.scene, 1);
+            signMesh.ChangeCount(1);
+
+            // Set up the transform in local space (same as property 384)
+            const matrix = new THREE.Matrix4();
+            const pos = new THREE.Vector3(0, 0.1, 0);
+            const quat = new THREE.Quaternion();
+
+            const propertyScale = new THREE.Vector3(0.15, 0.08, 0.15);
+            pos.y += 2;
+
+            quat.setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2);
+            const tempQuat = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI);
+            quat.multiply(tempQuat);
+
+            matrix.compose(pos, quat, propertyScale);
+            signMesh.SetAtIndex(0, matrix);
+
+            element.posObject.add(signMesh.root);
+
+            element.AddBuilding(
+              new Building(
+                element,
+                signMesh,
+                this.protal.clone(true),
+                this.physicWorld,
+                false,
+                -1
+              )
+            );
+
+            // Create iframe element for YouTube
+            const iframe = document.createElement('iframe');
+            iframe.src = YOUTUBE_EMBED_URL;
+            iframe.width = '1920';
+            iframe.height = '1080';
+            iframe.className = 'css3d-youtube-screen';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.style.border = 'none';
+
+            // Wrap iframe in CSS3DObject
+            const css3dObject = new CSS3DObject(iframe);
+
+            // Scale CSS3D object to match sign board size (3.2 units wide)
+            const screenScale = 3.2 / 1920; // Same as property 384 text width
+            css3dObject.scale.set(screenScale, screenScale, screenScale);
+
+            // Position to match property 384 text position
+            css3dObject.position.set(0, 2.65, 0.12);
+
+            // Create helper object for synchronization
+            const helperObject = new THREE.Object3D();
+            helperObject.position.copy(css3dObject.position);
+            helperObject.scale.copy(css3dObject.scale);
+            element.posObject.add(helperObject);
+
+            // Add to CSS3D scene
+            const mainScene = App3D.Ins.mainScene;
+            if (mainScene && mainScene.css3dScene) {
+              mainScene.css3dScene.add(css3dObject);
+              css3dObject.userData.helperObject = helperObject;
+              console.log(`✅ YouTube iframe created for property ${element.landID}`);
+              console.log('CSS3D scene children count:', mainScene.css3dScene.children.length);
+              console.log('CSS3D object position:', css3dObject.position);
+              console.log('Iframe element:', iframe);
+              console.log('Iframe src:', iframe.src);
+            } else {
+              console.error('CSS3D scene not available');
+            }
+          }
+        );
+        return;
+      }
+
+      // Special case for properties with BIG SKY YOUTUBE LIVE SCREEN (ALWAYS SHOW)
       if ([385, 362, 822, 866].includes(element.landID)) {
-        // Configure video URL here
-        // ❌ YouTube URLs don't work - need direct video files
-        // const VIDEO_URL = 'https://www.youtube.com/watch?v=XlQ4HwzR8i0';
-        
-        // ✅ Working alternatives:
-        const VIDEO_URL = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
-        // const VIDEO_URL = 'https://sample-videos.com/zip/10/mp4/SampleVideo_720x480_5mb.mp4';
-        // const VIDEO_URL = 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4';
-        
-        // 🔴 For live streams, you need direct streaming URLs like:
-        // const VIDEO_URL = 'https://your-streaming-server.com/live/stream.m3u8';  // HLS
-        // const VIDEO_URL = 'https://your-rtmp-server.com/live/stream.webm';       // WebRTC
+        // YouTube Live Stream Configuration
+        const YOUTUBE_VIDEO_ID = '_GuBtYkMkZ0'; // Replace with your live stream video ID
+        const YOUTUBE_EMBED_URL = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=1`;
 
-        // Create video element and texture
-        const video = document.createElement('video');
-        video.src = VIDEO_URL;
-        video.crossOrigin = 'anonymous';
-        video.loop = true;
-        video.muted = true;
-        video.playsInline = true;
-        video.autoplay = true;
+        // Create iframe element for YouTube Live Stream
+        const iframe = document.createElement('iframe');
+        iframe.src = YOUTUBE_EMBED_URL;
+        iframe.width = '1920';
+        iframe.height = '1080';
+        iframe.className = 'css3d-youtube-screen';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        iframe.style.border = 'none';
 
-        // Try to autoplay the video
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            console.log('Sky video screen playing successfully on property 385');
-          }).catch(error => {
-            console.warn('Sky video autoplay failed:', error);
-          });
-        }
+        // Wrap iframe in CSS3DObject
+        const css3dObject = new CSS3DObject(iframe);
 
-        // Create video texture
-        const videoTexture = new THREE.VideoTexture(video);
-        videoTexture.minFilter = THREE.LinearFilter;
-        videoTexture.magFilter = THREE.LinearFilter;
-        videoTexture.format = THREE.RGBAFormat;
+        // 🎬 SKY SCREEN CONFIGURATION (MASSIVE SIZE!):
+        const screenWidth = 40;      // MASSIVE screen width
+        const screenHeight = 24;     // MASSIVE screen height
+        const screenHeightInSky = 35; // Height in the sky
+        const screenDistance = 0;     // Forward/backward from property center
 
-        // Create material with video texture
-        const skyScreenMaterial = new THREE.MeshBasicMaterial({
-          map: videoTexture,
-          side: THREE.DoubleSide,  // Visible from both sides
-          toneMapped: false,
-          transparent: false
-        });
-
-        // 🎬 SKY SCREEN CONFIGURATION (DOUBLED SIZE!):
-        const screenWidth = 40;      // ← DOUBLED from 20 = MASSIVE screen
-        const screenHeight = 24;     // ← DOUBLED from 12 = MASSIVE screen
-        const screenHeightInSky = 35; // ← HIGHER = further up in sky
-        const screenDistance = 0;     // ← ADJUST = forward/backward from property center
-
-        // Create BIG sky screen geometry
-        const skyScreenGeometry = new THREE.PlaneGeometry(screenWidth, screenHeight);
-
-        // Create the sky screen mesh
-        const skyVideoScreen = new THREE.Mesh(skyScreenGeometry, skyScreenMaterial);
+        // Scale CSS3D object to match sky screen size
+        // CSS3D works in pixels, so we need to convert from 3D units
+        const screenScale = screenWidth / 1920; // Scale based on width
+        css3dObject.scale.set(screenScale, screenScale, screenScale);
 
         // Position the screen HIGH in the sky above the property
-        skyVideoScreen.position.set(0, screenHeightInSky, screenDistance);
+        css3dObject.position.set(0, screenHeightInSky, screenDistance);
 
-        // Optional: Add slight rotation to face viewers better
-        // skyVideoScreen.rotation.set(0, 0, 0); // No rotation = flat
-        // skyVideoScreen.rotation.set(-0.1, 0, 0); // Slight tilt down
+        // Create helper object for synchronization
+        const helperObject = new THREE.Object3D();
+        helperObject.position.copy(css3dObject.position);
+        helperObject.scale.copy(css3dObject.scale);
+        element.posObject.add(helperObject);
 
-        // Add the sky screen to the property
-        element.posObject.add(skyVideoScreen);
-
-        // Store video reference for cleanup if needed
-        element.posObject.userData.video = video;
-        element.posObject.userData.skyVideoScreen = skyVideoScreen;
-
-        console.log(`🎬 MASSIVE SKY VIDEO SCREEN created for property ${element.landID}!`);
-        console.log(`   Size: ${screenWidth}x${screenHeight} units (DOUBLED SIZE!)`);
-        console.log(`   Height: ${screenHeightInSky} units in the sky`);
-   
-        console.log(`   Video: ${VIDEO_URL}`);
+        // Add to CSS3D scene
+        const mainScene = App3D.Ins.mainScene;
+        if (mainScene && mainScene.css3dScene) {
+          mainScene.css3dScene.add(css3dObject);
+          css3dObject.userData.helperObject = helperObject;
+          console.log(`🎬 MASSIVE SKY YOUTUBE LIVE SCREEN created for property ${element.landID}!`);
+          console.log(`   Size: ${screenWidth}x${screenHeight} units`);
+          console.log(`   Height: ${screenHeightInSky} units in the sky`);
+          console.log(`   YouTube Video: ${YOUTUBE_VIDEO_ID}`);
+        } else {
+          console.error('CSS3D scene not available');
+        }
 
         return;
       }
@@ -1374,6 +1432,32 @@ export default class NftBuildings {
     this.lands.forEach((land) => {
       if (land.building) land.building.Update();
     });
+
+    // Synchronize CSS3D objects with their helper objects
+    const mainScene = App3D.Ins.mainScene;
+    if (mainScene && mainScene.css3dScene) {
+      // Only log when there are CSS3D objects (to avoid spam)
+      if (mainScene.css3dScene.children.length > 0) {
+        // Uncomment for debugging:
+        // console.log('Syncing CSS3D objects:', mainScene.css3dScene.children.length);
+      }
+
+      mainScene.css3dScene.children.forEach((css3dObject) => {
+        if (css3dObject.userData.helperObject) {
+          const worldPos = new THREE.Vector3();
+          const worldQuat = new THREE.Quaternion();
+          const worldScale = new THREE.Vector3();
+
+          css3dObject.userData.helperObject.getWorldPosition(worldPos);
+          css3dObject.userData.helperObject.getWorldQuaternion(worldQuat);
+          css3dObject.userData.helperObject.getWorldScale(worldScale);
+
+          css3dObject.position.copy(worldPos);
+          css3dObject.quaternion.copy(worldQuat);
+          css3dObject.scale.copy(worldScale);
+        }
+      });
+    }
   }
   // Method to check wallet connection and fetch NFTs with retries
   // Enhanced method to check wallet connection and fetch NFTs with retries

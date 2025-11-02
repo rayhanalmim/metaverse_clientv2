@@ -11,6 +11,7 @@ import {
   RAYLAYER,
 } from '../../constant/constant';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { CSS3DRenderer, CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import Avatar from '../avatars/MainAvatar';
 import { Vector3 } from 'three';
 import CharacterController from '../controls/CharacterController';
@@ -44,6 +45,10 @@ export default class MainScene extends OnlineScene {
   public sunPos: Vector3;
   public renderTarget: any;
   public NFTBuilding;
+
+  // CSS3D Renderer for HTML elements (YouTube iframes)
+  public css3dRenderer: CSS3DRenderer;
+  public css3dScene: THREE.Scene;
 
   private cursor: THREE.Object3D;
 
@@ -91,6 +96,7 @@ export default class MainScene extends OnlineScene {
     this.CreateCursor();
     this.SetupLights();
     this.SetupControl();
+    this.SetupWindowResize();
 
     Env.Ins.resourcesManager.loadingManager.onLoad = () => {
       this.isFinalLoad = true;
@@ -150,6 +156,22 @@ export default class MainScene extends OnlineScene {
     console.log('renderer', this.renderer);
 
     this.renderer.debug.checkShaderErrors = false;
+
+    // Create CSS3D Renderer for HTML elements (YouTube iframes)
+    this.css3dRenderer = new CSS3DRenderer();
+    this.css3dRenderer.setSize(window.innerWidth, window.innerHeight);
+    this.css3dRenderer.domElement.style.position = 'absolute';
+    this.css3dRenderer.domElement.style.top = '0';
+    this.css3dRenderer.domElement.style.left = '0';
+    this.css3dRenderer.domElement.style.zIndex = '11'; // Above WebGL renderer
+    this.css3dRenderer.domElement.style.pointerEvents = 'none'; // Allow interactions to pass through by default
+    this.container?.appendChild(this.css3dRenderer.domElement);
+
+    // Create CSS3D Scene (separate from WebGL scene)
+    this.css3dScene = new THREE.Scene();
+    console.log('✅ CSS3D renderer initialized');
+    console.log('CSS3D renderer DOM element z-index:', this.css3dRenderer.domElement.style.zIndex);
+    console.log('CSS3D renderer size:', window.innerWidth, 'x', window.innerHeight);
 
     // load environment texture
     Env.Ins.resourcesManager.LoadRGBETexture(ASSETS.ENVIRONMENT, (texture) => {
@@ -261,6 +283,22 @@ export default class MainScene extends OnlineScene {
         this.physicWorld,
       );
       App3D.Ins.globalController = this.controller;
+    });
+  }
+
+  private SetupWindowResize() {
+    window.addEventListener('resize', () => {
+      // Update camera
+      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.updateProjectionMatrix();
+
+      // Update WebGL renderer
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+
+      // Update CSS3D renderer
+      if (this.css3dRenderer) {
+        this.css3dRenderer.setSize(window.innerWidth, window.innerHeight);
+      }
     });
   }
 
@@ -436,5 +474,10 @@ export default class MainScene extends OnlineScene {
       this.control.update();
     }
     super.Update(deltaTime);
+
+    // Render CSS3D scene (YouTube iframes and other HTML elements)
+    if (this.css3dRenderer && this.css3dScene) {
+      this.css3dRenderer.render(this.css3dScene, this.camera);
+    }
   }
 }
