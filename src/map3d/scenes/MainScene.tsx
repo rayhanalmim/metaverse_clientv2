@@ -49,6 +49,8 @@ export default class MainScene extends OnlineScene {
   // CSS3D Renderer for HTML elements (YouTube iframes)
   public css3dRenderer: CSS3DRenderer;
   public css3dScene: THREE.Scene;
+  public characterRenderer: any;
+  public characterScene: any;
 
   private cursor: THREE.Object3D;
 
